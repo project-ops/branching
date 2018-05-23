@@ -1,14 +1,9 @@
 language: bash
 services: docker
 install: false
-env:
-  global:
-    - secure: "lB9nZUAULsihwLPZomKzTKxxxDcLmCusPIKJCaI/7e13T4xtKypWSDGYx1TqkHsbRhb2TQ/wqCkxFqOVuUGelNOs63YdykKbRYvDuS/K1iCXTbnFHDME9XbA5l1KYy499/ogN8+iV/HlNuyoFOKFrJh1APV3RsJchcKtu/jwOu8HcoPiIphqG/Vin3EiTwVUKZk4JXxpmuRyPjrbImt05OZgm+/+0m4z4wy8XbrOhyGgUkSYQrUjij9KG+m4kHOdzF3uQtxQb6r/Z0SFIySOXMjsDXLnYWOrN+uZhoh5YFRXy7GCA/VKZDa3oj4T2YLBXXErIMCP8msT2f7rkRH97KzSbCyLF1wU+8rXq1YBVsF9yfOm5/Mbc28Oxh+oiIJYSuBGeJXQ+tMj3AuQDEbKmzTlm9a/HOW/HY2jTGid3BqkfiHq3O6lw/JZj9mwSAru5z3aiq1xHJ3qv+0nwjJScAT5ZfnPsnfW3UvsmUjPViSkGjOdIdZydkHXT+kyGOl+EGcMOjHoaRxYRuLJNIB6xsYzkhjfGCDJqJmTCLspl+L03GktwhtA6ZI3tVaVJf+kPJgfQQoN3Acl6VFQYP77Xm2czPkGpKJM4wVRFXM4FkcyWv0QjsHIrNNPuVtojBD0Zbj/c7W2WBUdlRHknBqjI85PG2Z9gWqP0XoQAbUvWIs="
-    - secure: "VVmyGfsd1vx798R9lHlraEJm/m/yIW5Mru8nfpW2c9/omlQAJuBOYqwauJ3DhpGlCQyDD/uqk2JV2+yM4cM9WXVAu29AK5wLdlTNHt+Rt3O0AzfmoTY8m1PySfCC85wJYhHDqD21GwTDmEumy7vqCo1ERalCoJkNFabVXQiizBc5VPVtb/kJQ+Gi0B1zbZ2RRAZlKGcj7zvOICISmTNbO7u/skhv5eTkXh0s5pJ8rBNlOpXvANWmtv+aWJ/t2wSIu0WMSTRj8ZkRs9y674+jgUIv5Vp0+L6uCaXODHE5XpKmOcb8waxNUwBk3Z4fEmvxJT8kc9fxZY7DjCxGjY3/BfLFKDq7NANSp+8Chdahp3o4K09Vg4dImAFmpwXaBUvc5v9AuJu0fvUP5T/lq5imA1EFWvS2TwLGKrZOCrzo095T/fh8H1KFXCTi6S5IEHNt+aRAwZjD/hBLGFTH48Q8BU51kkfeVH3M0iPRtiMQDHxaOlPFva/OOWDrJj06XzR4Chzt8QRiaZJP7qyEKMuavrFWtepwWulitLaq12GRSGE2YM7FXkj6Y9BPLp/E/G0ROMj+0+nAx84L2gu43uW9mkozOpT8qFAV9V054c72TVHKaNmG+kD8FQmHeiASHf4vU9gtefbVErshTjj76eTe0b3pKLPNhva06ekmU12v7h0="
-
 script:
-- docker build -t rjshrjndrn/ansible:2.4.1 .
-- docker run -d -p 8000:8000 rjshrjndrn/ansible:2.4.1
+- docker build -t rjshrjndrn/webapp .
+- docker run -d -p 8000:8000 rjshrjndrn/webapp
 - docker ps
 - bash -x test.sh
 after_script:
