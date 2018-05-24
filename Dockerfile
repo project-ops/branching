@@ -6,4 +6,4 @@ ENV ANSIBLE_HOST_KEY_CHECKING=False
 ENV SSH_AUTH_SOCK=/ssh-agent
 EXPOSE 8000
 WORKDIR /ansible
-CMD ["nc", "-k", "-l", "8000"]
+CMD ["nc", "-k", "-l", "9000"]
