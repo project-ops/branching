@@ -3,7 +3,7 @@ services: docker
 install: false
 script:
 - docker build -t rjshrjndrn/webapp .
-- docker run -d -p 9000:9000 rjshrjndrn/webapp
+- docker run -d -p 9000:10000 rjshrjndrn/webapp
 - docker ps
 - bash -x test.sh
 after_script:
