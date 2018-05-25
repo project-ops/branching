@@ -2,14 +2,9 @@ language: bash
 services: docker
 install: false
 script:
-- docker build -t rjshrjndrn/webapp .
-- docker run -d -p 9000:10000 rjshrjndrn/webapp
-- docker ps
-- bash -x test.sh
+  - docker build -t rjshrjndrn/nodeapp .
+  - docker run -d -p 8000:8000 -d rjshrjndrn/nodeapp
+  - docker ps
+  - bash -x test.sh
 after_script:
-- docker images
-deploy:
-  provider: script
-  script: bash docker_push.sh
-  on:
-    branch: master
+  - docker images
