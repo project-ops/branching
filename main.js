@@ -1,5 +1,4 @@
 // This is a simple user counter webapp
-
 var http = require("http")
 
 //Creating HTTPServer
