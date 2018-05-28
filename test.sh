@@ -1,3 +1,3 @@
 #!/bin/bash
 # added sample comment
-nc -zv localhost 9000
+curl localhost:8000
