@@ -13,5 +13,7 @@ after_script:
   - bash -x test.sh
   - docker images
 deploy:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push rjshrjndrn/dev_${TRAVIS_COMMIT}
+  provider: script
+  script: deploy.sh
+  on:
+    branch: dev
