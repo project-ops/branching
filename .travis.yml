@@ -11,7 +11,6 @@ script:
 after_script:
   - bash -x test.sh
   - docker images
-  - bash -x deploy.sh
 deploy:
   skip_cleanup: true
   provider: script
