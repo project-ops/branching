@@ -3,8 +3,7 @@ services: docker
 install: false
 env:
   global:
-    - secure: uE5FyBY9kTlgQmRFkC3VDgp4EFbnYlf+/f5+m7/am1msAuvixoe/p2bTmpNlPQ97LXcjQdwvbLFGnZER1xd/Xa5oSRN+PBn+V3xWjlMZzbWsrtOg2W7r8tydWD+zGhHvTRkUaP6yOVe7ETg6cqlCrIFcM2QssGeYTg2o941QjFtFeZrhojCN9ObulQnkJ8sQ+gtH5fmIH7+M1NlojTHGK+f029EXL5yVU/0tfOlO+bqbBvtFTbI3Fn7uN4aINog4OXMxTOog+lS3E4UkKV2aBt6oOBuMj64J+oo0iyeMHHlsuf4DvybBv36sbTsQKiZrcF6rVGlWy7AyRZB0cTnz4ymqujQUzBTr2h+pHdeGlsUNTHDBDlHCkuEx3IaxJruBATewI4btq0SIXzM4xJntBQ1cgIJfLLwK190PwRVd/5wt/WyhDAl/Sil+ovFZGyZwfJqDD3vnwf9+lJTy2epFXlgC8ZaWZhtpyTF95lMLR1EwE+XH5lBDI+ahmDYD435Ygv4AMbXV3H0kFyCSkz+5ur+sQZYQXspopu3R1P4eq0M2TqvhiC22O974owCErYF/rQzFMpltyDSGpwppDyZlHc630HjxdQ9DnS5Ryja6plAZzArJtrdb1JtuRg7zUlG5Jyhmy3Mg0P/7c4vvF4cHST4eBKnLfwR1OTUkfzgw0dQ=
-    - secure: P+RfjPUrDtHTLtSemf/6+39e26ctLXtjEduYYz4O5sKMqXshgOpM+kqnF4vMNMHbl5+vxaW/upqgobWlsVSrFXP6JGUkO2/it8D/VXkUI3YXyOsmjNNeMbCdPhA3EHa05fs3AlnUDtGuZnNH8MOmOobemMttawyc+K6RB3n53XDfwYTJ1Ygymq76lrrVV7iE0sQOLygv3Ur2dPORoEIg2jFGRhw/SumgumBAUWH0nzhxW0jNQ3b6xRuVaF1OLrwJ4T3hsWB/pA89/zmDDjoOhAzu0iZn/BVmEZyz9dgFTl9Tf6sW4ab8lrpVSAt23rtfUGu7SoVk8/KW5ZoDuT7YXUFnCeKLDtFTZ8A+NFCiMLmLydZ446LH9VltNpEi7ve9r34rvuH0rPqTqae4nzENplyD51MVkQ7KTZMSXKjauvp2ILehI8AgYBOQAmBfFuz6IABi1HEPjGVTlyG0Z8IRD2C8kxXBwqqI+Kwm+ICR7xYTKT9EUdKFuKWCK//TR+zg9mI0B+qnb0DBGPaXOaa3hpST1P/Nwy1KvrhVEw4C8QQ7blakeoKbYn+YbXFUTs28yX3Gtg7kgUu271tqt8jMPiFsGzh50RAz4O81nwrtosp82RB4iIs0cQWPQqLg/SO3fPCDmJ6+vlyiz4LZhO+JklD/T0VgNnNghr64oTsP038=
+    secure: ZwvFvKc8Nk+hGSfjMHr0YsIldgklojyFJDgHb2CtKahcU0J39B/U7dxq4qXyBxwd5AGKopWx1LlI8KRkNsgS8Q7nI3C1WuTwG3FuubWmskwwyakPS7zoQy4V/cX73dsV/mzNdKXJpKRzVg9CzEGR7Mgk4tpaDNTD/PyBnsFikRDIMS/oDxpCvgXUtiqJ0vfMipejQrzEqxCD6auf8Ou2cZvymNty01cDJsJdvsOXR+Rgw3j4NGWtO4PP3l1yeGgOzm31eOW/kj5RxGkds3warw1UcVzROL7Z9x/SBkqkyxM2ooLV0ZlgBvmx29yYTjaNKMm0TRXoYeLcJ1q/0/6ctesRAJhIAJlPztpy/b8sUL38lN+o61Dx+aox3OxOf3G6+emH5ajWHUJvOv/y7nk9OtzcbHoqq8/nZDODSWijp14o8WCedY5BsHyxmBNwzyEPs4TmfHuv/B4gxxoMhV0eK7hjufjQb1cNInw65WRaU0FSAUcoufk4Pq3D0IEoA+SjODJshzXIKSfXqNk4fxJ7odi2pgmbpufbvEoQ/ESdK2+IQ3dvQ+D+hK/CVFAsT7fo8ii+Wz6v2nYRfARkWZwjMtDFzwiT78qatlUjwlpH2q3Q5y+JXkLbSEf/w0VjngGKyk/c0ZbJQAELppi3AAj4/k5bRIJWkKgaKxnVRASYWN8=
 script:
   - docker build -t rjsjrjndrn/dev:${TRAVIS_COMMIT} .
   - docker run -d -p 8000:8000 -d rjsjrjndrn/dev:${TRAVIS_COMMIT}
@@ -12,7 +11,7 @@ script:
 after_script:
   - bash -x test.sh
   - docker images
-  - bash -x deploy.sh
+  - deploy.sh
 deploy:
   skip_cleanup: true
   provider: script
