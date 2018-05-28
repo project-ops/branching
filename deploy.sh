@@ -1,3 +1,3 @@
 #!/bin/bash
-echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-docker push rjshrjndrn/dev_${TRAVIS_COMMIT}
+echo "$DOCKER_PASSWORD" | docker login -u rjsjrjndrn --password-stdin
+docker push rjsjrjndrn/dev:${TRAVIS_COMMIT}
