@@ -8,8 +8,3 @@ script:
   - bash -x test.sh
 after_script:
   - docker images
-deploy:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push rjshrjndrn/dev_${TRAVIS_COMMIT}
-  on:
-    branch: dev
