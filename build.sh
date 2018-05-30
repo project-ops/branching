@@ -6,7 +6,7 @@
 # relase_branch merged to master => gold image to docker public repo (image name: dev/major-version_latest,version)
 
 version=$(cat version.env)
-if [[ ${travis_branch} != master ]]; then
+if [[ ${TRAVIS_BRANCH} != master ]]; then
     docker build -t rjsjrjndrn/${version}_${TRAVIS_COMMIT} .
     exit 0
 fi
