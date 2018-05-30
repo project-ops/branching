@@ -6,11 +6,5 @@
 # relase_branch merged to master => gold image to docker public repo (image name: dev/major-version_latest,version)
 
 version=$(cat version.env)
-if [[ ${TRAVIS_BRANCH} != master ]]; then
-    docker build -t rjsjrjndrn/dev:${version}_${TRAVIS_COMMIT} .
-    export IMAGE_NAME="rjsjrjndrn/dev:${version}_${TRAVIS_COMMIT}"
-    exit 0
-fi
-export IMAGE_NAME="rjsjrjndrn/nodeapp:${version}"
-docker buld -t rjsjrjndrn/nodeapp:${version}_latest .
-docker buld -t rjsjrjndrn/nodeapp:${version} .
+docker build -t rjsjrjndrn/dev:${version}_latest .
+docker build -t rjsjrjndrn/dev:${version}_${TRAVIS_COMMIT} .
