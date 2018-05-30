@@ -6,7 +6,6 @@ env:
     secure: ZwvFvKc8Nk+hGSfjMHr0YsIldgklojyFJDgHb2CtKahcU0J39B/U7dxq4qXyBxwd5AGKopWx1LlI8KRkNsgS8Q7nI3C1WuTwG3FuubWmskwwyakPS7zoQy4V/cX73dsV/mzNdKXJpKRzVg9CzEGR7Mgk4tpaDNTD/PyBnsFikRDIMS/oDxpCvgXUtiqJ0vfMipejQrzEqxCD6auf8Ou2cZvymNty01cDJsJdvsOXR+Rgw3j4NGWtO4PP3l1yeGgOzm31eOW/kj5RxGkds3warw1UcVzROL7Z9x/SBkqkyxM2ooLV0ZlgBvmx29yYTjaNKMm0TRXoYeLcJ1q/0/6ctesRAJhIAJlPztpy/b8sUL38lN+o61Dx+aox3OxOf3G6+emH5ajWHUJvOv/y7nk9OtzcbHoqq8/nZDODSWijp14o8WCedY5BsHyxmBNwzyEPs4TmfHuv/B4gxxoMhV0eK7hjufjQb1cNInw65WRaU0FSAUcoufk4Pq3D0IEoA+SjODJshzXIKSfXqNk4fxJ7odi2pgmbpufbvEoQ/ESdK2+IQ3dvQ+D+hK/CVFAsT7fo8ii+Wz6v2nYRfARkWZwjMtDFzwiT78qatlUjwlpH2q3Q5y+JXkLbSEf/w0VjngGKyk/c0ZbJQAELppi3AAj4/k5bRIJWkKgaKxnVRASYWN8=
 script:
   - bash -x build.sh
-after_success:
   - bash -x test.sh
 deploy:
   # Deploying development
