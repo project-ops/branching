@@ -12,10 +12,9 @@ deploy:
   # Deploying development
   - provider: script
     skip_cleanup: true
-    script: bash deploy.sh ${DOCKER_PASSWORD} dev:{{lookup(file, 'version.env')}}_${TRAVIS_COMMIT}
+    script: bash deploy.sh ${DOCKER_PASSWORD} dev
     on:
       branch:
-        - docker-name
         - dev
         - /release-*/
   # Deploying production
