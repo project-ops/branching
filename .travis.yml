@@ -7,10 +7,17 @@ env:
 script:
   - bash -x build.sh
   - bash -x test.sh
+
+# Restricting branches to build
+branches:
+  only:
+    - dev
+    - /release-*/
+    - master
+
+# Deploying application
 deploy:
-  # Deploying development
   - provider: script
-    skip_cleanup: true
     script: bash deploy.sh ${DOCKER_PASSWORD}
     on:
       branch:
