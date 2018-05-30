@@ -7,7 +7,7 @@
 
 version=$(cat version.env)
 if [[ ${TRAVIS_BRANCH} != master ]]; then
-    docker build -t rjsjrjndrn/${version}_${TRAVIS_COMMIT} .
+    docker build -t rjsjrjndrn/dev:${version}_${TRAVIS_COMMIT} .
     exit 0
 fi
 
