@@ -13,7 +13,6 @@ deploy:
     script: bash deploy.sh ${DOCKER_PASSWORD}
     on:
       branch:
-        - feature-1
         - dev
         - /release-*/
         - master
