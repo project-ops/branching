@@ -12,7 +12,7 @@ deploy:
   # Deploying development
   - provider: script
     skip_cleanup: true
-    script: bash deploy.sh ${DOCKER_PASSWORD} ${IMAGE_NAME}
+    script: bash deploy.sh ${DOCKER_PASSWORD} dev:{{lookup(file, 'version.env')}}_${TRAVIS_COMMIT}
     on:
       branch:
         - docker-name
