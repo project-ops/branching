@@ -10,7 +10,6 @@ script:
 deploy:
   # Deploying development
   - provider: script
-    skip_cleanup: true
     script: bash deploy.sh ${DOCKER_PASSWORD}
     on:
       branch:
