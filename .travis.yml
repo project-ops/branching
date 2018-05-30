@@ -11,14 +11,9 @@ deploy:
   # Deploying development
   - provider: script
     skip_cleanup: true
-    script: bash deploy.sh ${DOCKER_PASSWORD} dev
+    script: bash deploy.sh ${DOCKER_PASSWORD}
     on:
       branch:
         - dev
         - /release-*/
-  # Deploying production
-  - provider: script
-    skip_cleanup: true
-    script: bash deploy.sh ${DOCKER_PASSWORD} ${IMAGE_NAME}_latest
-    on:
-      branch: master
+        - master
