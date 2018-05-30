@@ -11,13 +11,13 @@ after_script:
 deploy:
   # Deploying development
   - provider: script
-    script: bash deploy.sh ${DOCKER_PASSWORD} dev:${TRAVIS_COMMIT}
+    script: bash deploy.sh ${DOCKER_PASSWORD} ${IMAGE_NAME}
     on:
       branch:
         - dev
         - /release-*/
   # Deploying production
   - provider: script
-    script: bash deploy.sh ${DOCKER_PASSWORD} nodeapp:${TRAVIS_BRANCH}
+    script: bash deploy.sh ${DOCKER_PASSWORD} ${IMAGE_NAME}_latest
     on:
       branch: master
