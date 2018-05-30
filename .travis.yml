@@ -13,7 +13,9 @@ deploy:
   - provider: script
     script: bash deploy.sh ${DOCKER_PASSWORD} dev:${TRAVIS_COMMIT}
     on:
-      branch: dev
+      branch:
+        - dev
+        - /release-*/
   # Deploying production
   - provider: script
     script: bash deploy.sh ${DOCKER_PASSWORD} nodeapp:${TRAVIS_BRANCH}
