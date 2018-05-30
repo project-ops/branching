@@ -7,6 +7,11 @@ env:
 script:
   - bash -x build.sh
   - bash -x test.sh
+branches:
+  only:
+    - dev
+    - /release-*/
+    - master
 deploy:
   # Deploying development
   - provider: script
