@@ -2,7 +2,6 @@
 var http = require("http")
 
 //Creating HTTPServer
-
 var userCount = 0;
 http.createServer(function(request, response) {
 	// Sending HTTP Header
